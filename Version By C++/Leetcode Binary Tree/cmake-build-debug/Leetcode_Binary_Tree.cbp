@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Leetcode_Binary_Tree"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Leetcode_Binary_Tree">
+				<Option output="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Leetcode_Binary_Tree.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/backward"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 Leetcode_Binary_Tree"/>
+					<CompileFile command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Leetcode_Binary_Tree/fast">
+				<Option output="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Leetcode_Binary_Tree.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++/backward"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
+					<Add directory="D:/Sofeware/Code Tools/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 Leetcode_Binary_Tree/fast"/>
+					<CompileFile command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Sofeware/CODETO~1/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;E:/CODE/Leetcode/Leetcode Binary Tree/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/CODE/Leetcode/Leetcode Binary Tree/main.cpp">
+			<Option target="Leetcode_Binary_Tree"/>
+		</Unit>
+		<Unit filename="E:/CODE/Leetcode/Leetcode Binary Tree/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
