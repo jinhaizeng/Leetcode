@@ -1,9 +1,13 @@
 本篇由两部分组成第一部分是OJ题对应的链接，第二部分是OJ题的解题思路  
- ID | Title | Difficulty | Java 
- :--------: | :------: | :---------: | :-------: 
- Binary Tree001 | Preorder Travel |  1 | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) 
+| ID | Title | Difficulty | Java |
+| :--------: | :------: | :---------: | :-------: |
+| Binary Tree001 | Preorder Travel |  1 | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) |
 
 
+
+|  ID  |                            Title                             | Difficulty |                             Java                             |                            Python                            |                             Ruby                             |                     C++                      |                     Swift                      |
+| :--: | :----------------------------------------------------------: | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------: | :--------------------------------------------: |
+| 001  |      [Two Sum](https://leetcode.com/problems/two-sum/)       |    Easy    | [Java](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.java) | [Python](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.py) | [Ruby](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.rb) | [C++](http://www.liuchuo.net/archives/1006)  |                       no                       |
 
 -------------------------------------------
 **以下部分markdown主要来记录下自己刷leetcode的一点反思**
