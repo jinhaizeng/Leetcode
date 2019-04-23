@@ -1,7 +1,7 @@
 本篇由两部分组成第一部分是OJ题对应的链接，第二部分是OJ题的解题思路  
-| ID | Title | Difficulty | Java |
-| :--------: | :------: | :---------: | :-------: |
-| Binary Tree001 | Preorder Travel |  1 | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) |
+ ID | Title | Difficulty | Java 
+ :--------: | :------: | :---------: | :-------: 
+ Binary Tree001 | Preorder Travel |  1 | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) 
 
 
 
