@@ -3,13 +3,13 @@
 
 |    ID          |      Title      |    Difficulty  |         Java            |
 | :------------: | :-------------: | :------------: | :---------------------: |
-| Binary Tree001 | Preorder Travel |      1         | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) |
+| Binary Tree001 | [Preorder Travel](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/928/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Preorder%20Travel/Solution.java) |
+| Binary Tree002 | [Inorder Travel](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/929/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Inorder%20Travel/Solution.java) |
+| Binary Tree003 | [Postorder Travel](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/930/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Postorder%20Travel/Solution.java) |
+| Binary Tree004 | [Level-order Travel](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/931/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Level%20Order%20Travel/Solution.java) |
+| Binary Tree005 | [Maximum Depth of Binary Tree](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/535/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Maxium%20Depth%20of%20Binary%20Tree/Solution.java) |
+| Binary Tree006 | [Symmetric Tree](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Symmetric%20Tree/Solution.java) |
 
-
-
-|  ID  |                            Title                             | Difficulty |                             Java                             |                            Python                            |                             Ruby                             |                     C++                      |                     Swift                      |
-| :--: | :----------------------------------------------------------: | :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------: | :--------------------------------------------: |
-| 001  |      [Two Sum](https://leetcode.com/problems/two-sum/)       |    Easy    | [Java](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.java) | [Python](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.py) | [Ruby](https://github.com/corpsepiges/leetcode/blob/master/Algorithms/001.%20Two%20Sum/Solution.rb) | [C++](http://www.liuchuo.net/archives/1006)  |                       no                       |
 
 -------------------------------------------
 **以下部分markdown主要来记录下自己刷leetcode的一点反思**
