@@ -9,6 +9,9 @@
 | Binary Tree004 | [Level-order Travel](https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/931/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Level%20Order%20Travel/Solution.java) |
 | Binary Tree005 | [Maximum Depth of Binary Tree](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/535/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Maxium%20Depth%20of%20Binary%20Tree/Solution.java) |
 | Binary Tree006 | [Symmetric Tree](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Symmetric%20Tree/Solution.java) |
+| Binary Tree007 | [Path Sum](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/537/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Path%20Sum/Solution.java) |
+| Binary Tree008 | [Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/942/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Construct%20Binary%20Tree%20from%20Inorder%20and%20Postorder%20Traversal/Solution.java) |
+| Binary Tree009 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/943/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal/Solution.java) |
 
 
 -------------------------------------------
