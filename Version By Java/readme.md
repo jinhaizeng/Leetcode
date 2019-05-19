@@ -85,11 +85,81 @@ if(height >= list.size())
 一刷时的初步思路：采用BFS,每一层遍历的时候存到一个数组里面，看是不是对称的。即逐层遍历是否对称  
 [本题大佬的代码](https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/discuss/33054/Recursive-and-non-recursive-solutions-in-Java)  
 
+### 7.Path Sum
+一刷遇到的问题，就是递归的终止条件怎么写
+
+#### 方法二：递归（网上大神些的代码）
+使用递归的思路解决问题，初步整理的算法思路是这样的。提炼下函数功能：就是判断这颗树里面里有没有满足sum值的一条路径。  
+整个算法的思路是自顶而下的。
+1. 将二叉树抽象成三个部分：根节点、左子树和右子树
+2. 思考递归终止条件，函数运行到这一层就代表了之前所有的递归的结果都是false，那么如果这个节点为空，那么整个二叉树肯定不存在这个路径
+3. 接下来就是判断是否存在这么一个路径，因为是自顶向下的判断思路，上一层判断结束的话，往下判断是否存在这个路径，那么就要减去这个节点，再往下遍历该节点的左右子树，那么自顶向下的过程就是sum不断减去上一个节点。由此可以得出存在这么一个路径的判定方式：节点的左子树和右子树都为空并且sum被减至零。
+4. 该节点遍历结束了，接下来就是递归结果他的左右子树了，下来来辨析下我之前的解法思路（即为什么会得不出想要的结果）  
+我之前想用DFS直接暴力的解决这个问题的，以下是我最开始的思路：
+```java
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        return root!=null && hasPathSumHelper(root,sum,0);
+    }
+    public boolean hasPathSumHelper(TreeNode root , int sum, int presentSum){
+        
+        presentSum += root.val;
+        if(root.left == null && root.right == null){
+            if(presentSum == sum)
+                return true;
+            
+        }
+        
+        if(root.left != null) hasPathSumHelper(root.left,sum,presentSum);
+        if(root.right != null) hasPathSumHelper(root.right,sum,presentSum);
+        return false;
+        
+    }
+}
+```
+如果采用上述的算法的话，一味的往深度的方向走，那么走到叶子节点的时候，必须要返回到上一层，那么此时就会出现一个问题。如果到了这个节点，sum被减至零，那么直接`return true`那么没什么大问题，但是如果sum没有被减至零，那么`return false`就出现问题了，因为你没有遍历完其他的路径，就直接flase是一直不负责的遍历算法。  
+那么如何改善这个问题呢，我从网上看到了其他大神的代码：
+```java
+class Solution{
+    public boolean hasPathSum(TreeNode root, int sum){
+        if(root == null)    return false;
+        if(root.left == null && root.right == null && sum - root.val == 0) return true;
+
+        return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);
+    }
+}
+```
+核心部分的代码`return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);`,这段代码核心部分这个||是关键，就是在递归过程中，只要有一个结果是true，那么最外层return的就是true。如果用我第一次写出来的思路，就无法实现这么个功能。
+
+### 8. Construct Binary Tree from Inoder and Postorder
+[相关知识链接](https://blog.csdn.net/u011068702/article/details/51914220)  
+本题的相关理解方式直接看第九题  
+注意理解整个递归的思想，比如
+```java
+root.left = buildTreeHelp(in,inStart,i-1,post,postStart,postStart+i-inStart-1);
+root.right = buildTreeHelp(in,i+1,inEnd,post,postStart+i-inStart,postEnd-1);
+```
+这个就是典型的递归的思想，把整个函数理解成返回整颗子树，然后就可以递归的得到根节点的左子树和右子树。
+
+### 9. Construct Binary Tree from Preorder and Inorder Traversal
+本地关键点：
+1. 中序遍历由于其特性，输出序列可以根据根节点划分，根节点左边的序列在根节点的左子树上，根节点右边的序列在根节点的右子树上。
+2. 三种遍历方法利用其中的两种然后建立一个二叉树，那么一定要有中序遍历，因为中序遍历可以利用根节点很自然的将序列划分成两部分，根节点的左边是左子树，根节点的右边为右子树。
+相关知识点的总结归纳：
+已知前序、中序遍历，求后序遍历  
+利用其前序遍历性质来解决问题，前序遍历首先访问的是根节点，得到根节点以后，利用中序遍历的性质：左子树——根节点——右子树，在得到根节点以后，利用中序遍历的序列，可以将原序列划分为左子树，根节点，右子树，然后再分别对左右子树进行如上的操作就可以直接得到整棵树了。  
+由此我们可以得到以上逻辑思路：  
+    1. 确定根，确定左右子树
+    2. 在左子树中递归
+    3. 在右子树中递归
+    4. 打印当前根
 
 ## 补充知识点：
 ### 1. 递归
 #### 1.1 欧几里得算法，又被称为辗转相除法。
 ![欧几里得算法的实例](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/%E5%9B%BE%E5%BA%8A/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95.png?raw=true)
+
+
 
 ### 1.2递归的思想
 递归和循环的例子  
