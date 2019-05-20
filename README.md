@@ -14,6 +14,13 @@
 | Binary Tree009 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/943/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/BinaryTree/Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal/Solution.java) |
 
 
+
+
+
+
+
+
+
 -------------------------------------------
 **以下部分markdown主要来记录下自己刷leetcode的一点反思**
 ## Binary Tree章节做的题目
@@ -156,6 +163,20 @@ root.right = buildTreeHelp(in,i+1,inEnd,post,postStart+i-inStart,postEnd-1);
     2. 在左子树中递归
     3. 在右子树中递归
     4. 打印当前根
+
+### 10. Populating Next Right Pointers in Each Node
+看到同一层之间的操作首先想到的是层次遍历，然后按层填充next这个指针就可以了，接下来思考下有没有更简单的实现方法  
+更简单的解决问题的方法，从“Symmetric Tree”这个问题得到了启发，对于这种按层进行操作的递归方法，应该从左右子树的根节点开始考虑问题，
+但是具体的解题思路还是没有理清楚，在此处留个坑位  
+看本题的input和output看错了，一定要注意id只是个编号，而val才是真正二叉树的值，对应图中树节点的数字  
+**第一次按照递归的思路瞎鸡儿写，还AC了，开心，哈哈哈哈**
+
+
+### 11. Populating Next Right Pointers in Each Node II
+本题由10题给出的思路，初步想出了增加判定条件的解决方案，即判断右子树是否存在，不存在就不递归了，找到存在的那个。初步想出的这个思路没用！  
+再次思考下：决定用BFS，其实也就是层次遍历的方法，用队列来实现，每次就直接入队和出队，**但是还有个问题没有解决：我怎么知道我遍历到哪一层了呢——这个是基础题，知识点又遗忘了，回头看第四题**  
+**会看第四题，判定层数的方式：取该层的大小，就可以得出该层的数目了，即该层拥有的元素个数。**  
+使用BFS，利用pre和now来相邻的两个节点的对象地址，然后依次赋值即可
 
 ## 补充知识点：
 ### 1. 递归
