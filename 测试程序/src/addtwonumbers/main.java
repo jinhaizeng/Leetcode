@@ -4,8 +4,8 @@ import listnode.*;
 
 public class main {
     public static void main(String[] args) {
-        int[] arr1 = {9,8};
-        int[] arr2 = {1};
+        int[] arr1 = {2,4,3};
+        int[] arr2 = {5,6,4};
         //建立ListNode
         ListNode l1 = ListNode.listBulid(arr1,0);
         ListNode l2 = ListNode.listBulid(arr2,0);
