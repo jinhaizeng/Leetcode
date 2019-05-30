@@ -88,3 +88,23 @@ public class Solution {
 }
 
 //方法三：柳神的代码，吃完饭以后回来写，不然现在没有理清思路都是直接看的代码得出的结果
+public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        return addHelper(l1,l2,0);
+    }
+    public ListNode addHelper(ListNode l1,ListNode l2,int CF){
+        //此处巧用?:  用这个来处理结点为空或者不为空的两种情况
+        //注意?: 只适用于boolean类型，所以要做类型转换
+        boolean a = l1 == null;
+        boolean b = l2 == null;
+        //写递归不要跳步骤，不然就容易漏写内容，比如这次就漏了递归的终止条件
+        if(a && b && CF == 0 )
+            return null;
+        int result = (a?0:l1.val) + (b?0:l2.val) + CF;
+        CF = result /10;
+        ListNode node = new ListNode(result%10);
+        node.next = addHelper((a)?null:l1.next, (b)?null:l2.next,CF);
+        return node;
+    }
+    
+}
