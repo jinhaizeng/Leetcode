@@ -1,5 +1,6 @@
 本篇Readme则是leetcode正式刷题的开始，按照老惯例，主要由两部分组成，第一部分是OJ题对应的链接，第二部分则是本道题目主要的算法思路  
 
+测试下本地git是否有问题
 
 
 
@@ -8,6 +9,9 @@
 | 001 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/leetcode%E6%AD%A3%E5%BC%8F%E9%A2%98/Two%20Sum/Solution.java) |
 | 002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/leetcode%E6%AD%A3%E5%BC%8F%E9%A2%98/Add%20Two%20Numbers/Solution.java) |
 | 003 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/leetcode%E6%AD%A3%E5%BC%8F%E9%A2%98/Longest%20Substring%20Without%20Repeating%20Characters/Solution.java) |
+| 005 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/leetcode%E6%AD%A3%E5%BC%8F%E9%A2%98/Longest%20Palindromic%20Substring/Solution.java) |
+| 006 | [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/) | Easy | [Java](https://github.com/jinhaizeng/Leetcode/blob/master/Version%20By%20Java/leetcode%E6%AD%A3%E5%BC%8F%E9%A2%98/ZigZag%20Conversion/Solution.java) |
+
 
 
 ## 001 Two Sum
