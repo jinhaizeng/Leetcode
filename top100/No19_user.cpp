@@ -15,6 +15,7 @@ public:
             return head;
         }
 
+        //算长度
         int length = 0;
         ListNode* listIndex = head;
         while (listIndex->next != NULL) {
@@ -26,18 +27,16 @@ public:
         if (target < 0) {
             return head;
         }
+
         listIndex = head;
         length = 0;
-        while (length < target - 1) {
-            ++length;
-            listIndex = listIndex->next;
-        }
-
-        if (target == 0 && head->next != NULL) {
+        if (target == 0) {
             head = head->next;
-        } else if (target == 0 && head->next == NULL) {
-            return NULL;
         } else {
+            while (length < target - 1) {
+                ++length;
+                listIndex = listIndex->next;
+            }
             listIndex->next = listIndex->next->next;
         }
 
