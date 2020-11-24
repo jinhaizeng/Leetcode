@@ -4,6 +4,9 @@
         "type_traits": "cpp",
         "xstring": "cpp",
         "xutility": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "queue": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
