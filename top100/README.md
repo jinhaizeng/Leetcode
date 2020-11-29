@@ -111,6 +111,74 @@ visit() {
 ```
 **此题切记不要死搬`visit(p->left)和visit(p->right)`，应该从状态树的角度思考，怎么从根节点到左下节点然后进行遍历，又怎么从左下角节点回到根节点，再从根节点来到右下节点进行遍历**
 
+### 超时问题原因分析
+以下代码缺点分析：
+1. generateParenthesis在调用generate的时候并不需要返回值，所以定义generate的时候应该用void类型
+2. 其次，leftCount, rightCount这些用完就丢的东西，在generateParenthesis中也没有使用价值，并不需要定义类型，直接传值进去就可以了：`generate(n, 0, 0, results, result);` **问题1+2就很简单的两行代码，直接就搞定了超时问题，所以代码能力一定要过关呀**
+3. 边界条件`if (leftCount + rightCount == 2 * n)`满足执行以后直接return，下面的逻辑会多走过多的判断耗时
+4. 二叉树的右侧树判断条件可以由`if (leftCount - rightCount > 0 && rightCount < n)`精简为`f (close < open)`
+``` C++
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+        int leftCount = 0, rightCount = 0;
+        vector<string> results;
+        string result = "";
+        if (n == 0) {
+            return results;
+        }
+        generate(n, leftCount, rightCount, results, result);
+        return results;
+    }
+
+    vector<string> generate(int n, int leftCount, int rightCount, vector<string> &results, string &result) {
+        if (leftCount + rightCount == 2 * n) {
+            results.push_back(result);
+        }
+
+        if (leftCount < n) {
+            result.push_back('(');
+            generate(n, leftCount + 1, rightCount, results, result);
+            result.pop_back();
+        }
+
+        if (leftCount - rightCount > 0 && rightCount < n) {
+            result.push_back(')');
+            generate(n, leftCount, rightCount + 1, results, result);
+            result.pop_back();
+        }
+    
+    return results;
+    }
+};
+```
+
+## 31.下一个排列
+**本题就没有读懂题干，先看了对题目的解读。关键内容：**
+* 可以将问题描述转化为：给定若干个数字，将其组合为一个整数。如何将这些数字重新排列，以得到下一个更大的整数。如 123 下一个更大的数为 132
+* 没有看具体解法，只是看了对题干的分析没有看解法，自己想到的方法——从数组的尾部进行遍历，如果前比后小，那么直接调换，如果前比后大，指针往前
+
+**以上思路只能保证调换后的数比之前的要大，但是不能保证是比之前数据大的所有集合中最小的，最小是问题的关键**
+
+### 看了题解以后的思路
+* 步骤1——从后往前遍历，前数比后数小，大的数和小的数互换位置，能保证当前数比之前的数要大，但是并不能保证是大的集合中最小的那个，比如`25341`变成`25431`，事实上应该是`25413`
+* 步骤2——所以另一个核心就是保证当前数比之前数变大的幅度是最小的，也就是3和4互换位置以后,**3以后的序列要进行升序排列，这点是一刷的时候没有想到的**
+总结为一般规律以后，就是要讲最大的和次大的互换位置，次大以后的序列进行升序遍历。因此可以考虑确定步骤1以后的前数以后，从后面子序中找出次大的调换位置后，讲后面子序进行快排，也就是需要四次遍历，效率极低
+
+```
+while (j >= 0 && nums[i] >= nums[j]) {
+    j--;
+}
+```
+这段代码的理解：因为是从后往前，找前数比后数小的，也就是说子序中的前数都比后数大，即满足降序，只需要从中找出比nums[i]大的数，就是大幅最小的数据了。因为i,j数据互换前，有`nums[j+1] > nums [j] > nums[j-1]和nums[j] > nums[i]`，而while只会在`nums[j] > nums[i]`的时候停止，所以有`nums[i] > nums[j-1]`  
+总结：`nums[j+1] > nums [j] > nums[i] > nums[j-1]`，所以i，j互换位置以后，并不需要快速排序，只需要降序变升序`reverse()`即可
+
+自己写代码的时候还有一处没有考虑到
+```C++
+if (point >= 0) {
+```
+因为跳出第一个while循环的时候，也有可能是point<0导致的
+
 # 算法笔记
 DFS和回溯法的区别：
 * 回溯是会“剪枝”的穷举，回溯搜索也是深度优先算法的一种
@@ -135,5 +203,7 @@ visit() {
     ...以此类推；
 }
 ```
+
+
 ## 贪心算法和动态规划使用的时机
 状态转移树中，若后一状态仅仅取决于上一个状态，就用贪婪算法；若后一状态取决于之前的多个状态，就用动态规划。
