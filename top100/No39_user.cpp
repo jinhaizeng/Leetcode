@@ -10,14 +10,17 @@ public:
     void find(vector<int>& candidates, int target, vector<vector<int>>& results, vector<int>& result, int left) {
         int length = candidates.size();
         for (int i = left; i < length; ++i) {
+            /*旧写法，稍微有点蠢
             if(target - candidates[i] == 0) {
                 result.push_back(candidates[i]);
                 results.push_back(result);
                 result.pop_back();
             }
+            */
+            if (target == 0) {
+                results.push_back(result);
+            }
             if (target - candidates[i] > 0) {
-                cout << "target: " << target << endl;
-                cout << "candidates: " << candidates[i] << endl;
                 result.push_back(candidates[i]);
                 find(candidates, target - candidates[i], results, result, i);
                 result.pop_back();

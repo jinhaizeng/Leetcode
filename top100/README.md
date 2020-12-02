@@ -29,6 +29,10 @@
     - [官方解法1——二分法查找法](#官方解法1二分法查找法)
   - [39.组合总和](#39组合总和)
     - [owner mind](#owner-mind-1)
+    - [题解感悟](#题解感悟)
+      - [想法专业名词化——之前想到过这个做法，但是不知道用法专业名词是啥](#想法专业名词化之前想到过这个做法但是不知道用法专业名词是啥)
+      - [优化项1——边界条件的确定可以提高代码质量](#优化项1边界条件的确定可以提高代码质量)
+      - [优化项2——本地并不需要对原有数据进行排序](#优化项2本地并不需要对原有数据进行排序)
 - [算法笔记](#算法笔记)
   - [先序遍历和深度优先算法的内核](#先序遍历和深度优先算法的内核)
   - [贪心算法和动态规划使用的时机](#贪心算法和动态规划使用的时机)
@@ -233,7 +237,41 @@ if (point >= 0) {
 想起了数据结构里面的一个结构，但是我给忘了，草
 
 ### owner mind
-看到这题第二反应是动态规划。递归，递就完事了
+看到这题第二反应是递归，递就完事了
+
+### 题解感悟
+#### 想法专业名词化——之前想到过这个做法，但是不知道用法专业名词是啥
+此题有点像图问题的DFS，将其进阶为搜索回溯法  
+将整个搜索过程想象为一棵树的形式
+
+#### 优化项1——边界条件的确定可以提高代码质量
+```C++
+//写法1
+if(target - candidates[i] == 0) {
+    result.push_back(candidates[i]);
+    results.push_back(result);
+    result.pop_back();
+}
+if (target - candidates[i] > 0) {
+    result.push_back(candidates[i]);
+    find(candidates, target - candidates[i], results, result, i);
+    result.pop_back();
+}
+
+// 写法2
+if (target == 0) {
+    results.push_back(result);
+}
+if (target - candidates[i] > 0) {
+    result.push_back(candidates[i]);
+    find(candidates, target - candidates[i], results, result, i);
+    result.pop_back();
+}
+```
+很明显写法2这种边界条件可以直接少了一层push和pop的代码量
+
+#### 优化项2——本地并不需要对原有数据进行排序
+本地的核心是不要有重复的一元数组，即[2,2,3]和[2,3,2]这种形式上的差异。也就是说index一旦走到下一个元素，DFS搜索下一个节点的时候，数组的左右区间就是[index, length]，而不是[0,length]，否则还是会有重复的问题
 
 # 算法笔记
 DFS和回溯法的区别：
