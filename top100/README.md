@@ -54,6 +54,7 @@
   - [75.颜色分类](#75颜色分类)
     - [看题解以后的思路](#看题解以后的思路)
   - [78.子集](#78子集)
+  - [79.单词搜索](#79单词搜索)
 - [算法笔记](#算法笔记)
   - [先序遍历和深度优先算法的内核](#先序遍历和深度优先算法的内核)
   - [贪心算法和动态规划使用的时机](#贪心算法和动态规划使用的时机)
@@ -387,10 +388,72 @@ hashmap来维护重复数组：key为具有相同属性的描述，value为具�
 
 本题自己写的方法实在是太挫了，记得重写遍题解的做法
 
+## 79.单词搜索
+问题难点其实是时间复杂度。  
+初步考虑可以采用硬解的方式，先遍历确定队首字母的位置，然后遍历四个方向的元素，找下一个符合条件的元素
+自己想的思路包含的两个部分，一个是队首字母位置的确定，一个是队首元素以后的遍历
+* 队首字母可以采用暴力遍历的方式
+  ```java
+  for (int i=0; i < row; ++i) {
+            for (int j=0; j < col; ++j) {
+                int[][] visit = new int[row][col];
+                result = search(board, sub, 0, i, j, visit);
+                if (result) {
+                    return true;
+                }
+            }
+        }
+  ```
+* 队首字母以后元素只有四个方向可以往后遍历，除此以外需要注意有些边界条件，这些条件的时候直接跳过
 
+以上思路执行的时候有两个注意点：
+* 如何避免重复元素多次被记入——如果采用记忆上一次是怎么移动的，不然其往回走这种方式无疑是很蠢的，不如用一个二维数组`visit[row][col]`保存当前符合条件且被遍历过的元素位置。但是需要注意这种思路其实有点像深度优先搜索了，每次退出当前遍历的时候，需要恢复除了结果的元素状态，也就是下面第二点
+* ```java
+  visit[i][j] = 1;
+  search(...);
+  visit[i][j] = 0;
+  ```
+  同理队首字母的暴力遍历每次都要用一个全新的visit
 
+**这种方式稍微有点暴力且蠢，但是至少可以把题目解出来**
 
+### 看了题解以后的小结
+**属实没想到题解中的深度优先算法竟然和我想的一模一样，但是自己的写法也有不好的点**
+```java
+//我的写法，稍微有点原始
+result = search(board, sub, index + 1, i + 1, j, visit);
+if (result) {
+    return true;
+}
+result = search(board, sub, index + 1, i - 1, j, visit);
+if (result) {
+    return true;
+}
+result = search(board, sub, index + 1, i, j + 1, visit);
+if (result) {
+    return true;
+}
+result = search(board, sub, index + 1, i, j - 1, visit);
+if (result) {
+    return true;
+}
 
+//可优化成题解的写法，更美观些
+int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+boolean result = false;
+for (int[] dir : directions) {
+    int newi = i + dir[0], newj = j + dir[1];
+    if (newi >= 0 && newi < board.length && newj >= 0 && newj < board[0].length) {
+        if (!visited[newi][newj]) {
+            boolean flag = check(board, visited, newi, newj, s, k + 1);
+            if (flag) {
+                result = true;
+                break;
+            }
+        }
+    }
+}
+```
 
 
 
