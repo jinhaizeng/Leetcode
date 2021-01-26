@@ -90,6 +90,8 @@
   - [152.乘积最大子数组](#152乘积最大子数组)
     - [题解感悟](#题解感悟-7)
   - [155.最小栈](#155最小栈)
+    - [题解感悟](#题解感悟-8)
+    - [题解感悟](#题解感悟-9)
 - [算法笔记](#算法笔记)
   - [先序遍历和深度优先算法的内核](#先序遍历和深度优先算法的内核)
   - [贪心算法和动态规划使用的时机](#贪心算法和动态规划使用的时机)
@@ -752,6 +754,54 @@ push，判断当前栈顶对象中最小值`minVal`和push对象的值`val`哪�
 pop的直接pop即可
 getMin直接取栈顶元素的`minVal`即可
 
+### 题解感悟
+经典评论：面试的时候被问到不能用额外空间，就去网上搜了下不用额外空间的做法。思路是栈里保存差值。
+```
+class MinStack:
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        self.min_value = -1
+
+    def push(self, x: int) -> None:
+        if not self.stack:
+            self.stack.append(0)
+            self.min_value = x
+        else:
+            diff = x-self.min_value
+            self.stack.append(diff)
+            self.min_value = self.min_value if diff > 0 else x
+
+    def pop(self) -> None:
+        if self.stack:
+            diff = self.stack.pop()
+            if diff < 0:
+                top = self.min_value
+                self.min_value = top - diff
+            else:
+                top = self.min_value + diff
+            return top
+
+    def top(self) -> int:
+        return self.min_value if self.stack[-1] < 0 else self.stack[-1] + self.min_value
+
+    def getMin(self) -> int:
+        return self.min_value if self.stack else -1
+```
+
+### 题解感悟
+* 哈希表，把链表A的节点存储在哈希表链，直接检查链表B每一节点是否在哈希表里面——牺牲空间省时间
+* 双指针
+  * 创建两个指针 pApA 和 pBpB，分别初始化为链表 A 和 B 的头结点。然后让它们向后逐结点遍历。
+  * 当 pApA 到达链表的尾部时，将它重定位到链表 B 的头结点 (你没看错，就是链表 B); 类似的，当 pBpB 到达链表的尾部时，将它重定位到链表 A 的头结点。
+  * 若在某一时刻 pApA 和 pBpB 相遇，则 pApA/pBpB 为相交结点。
+```
+1,3,5,7,9,11,2,4,9,11
+2,4,9,11,1,3,5,7,9,11
+```
+双指针初看很难理解，但是细想就会发现很简单很巧妙 A和B两个链表长度可能不同，但是A+B和B+A的长度是相同的，所以遍历A+B和遍历B+A一定是同时结束。 如果A,B相交的话A和B有一段尾巴是相同的，所以两个遍历的指针一定会同时到达交点 如果A,B不相交的话两个指针就会同时到达A+B（B+A）的尾节点
 
 
 # 算法笔记
