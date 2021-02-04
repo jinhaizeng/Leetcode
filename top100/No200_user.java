@@ -18,10 +18,13 @@ class Solution {
         return count;
     }
     public void dfs(char[][] grid, int x, int y) {
+        int row = grid.length;
+        int col = grid[0].length;
+        if (x < 0 || x >= row || y < 0 || y >= col || grid[x][y] == '0') {
+            return;
+        }
         if (grid[x][y] == '1') {
             grid[x][y] = '0';
-        } else if (grid[x][y] == '0') {
-            return;
         }
 
         dfs(grid, x-1, y);
